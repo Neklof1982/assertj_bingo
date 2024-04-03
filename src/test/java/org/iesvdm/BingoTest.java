@@ -28,7 +28,7 @@ public class BingoTest {
     }
 
     @Test
-    void rellenarNumerosCartonIsnotEmpty (){
+    void rellenarNumerosCartonIsnotEmptyandhasDimension (){
 
         //When (Cuando)
         // Genero los arrays columnas:
