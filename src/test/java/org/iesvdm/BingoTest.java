@@ -41,4 +41,23 @@ public class BingoTest {
 
     }
 
+    @Test
+    void buscarColumna(){
+
+    }
+
+    @Test
+    void buscarValorRepetido(){
+
+    }
+
+    @Test
+    void pintarCarton () {
+
+    }
+    @Test
+    void ordenar() {
+
+    }
+
 }
