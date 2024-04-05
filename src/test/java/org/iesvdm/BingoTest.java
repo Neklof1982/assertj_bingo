@@ -114,6 +114,13 @@ class BingoTest {
 
     @Test
     void buscarFila(){
+
+        // Prueba con
+
+        // -1  0 -1  0 -1 -1  0  0  0
+        //  0 -1 -1  0 -1  0  0  0 -1
+        // -1 -1  0 -1  0  0  0 -1  0
+
         //When (Cuando)
         // Genero los arrays columnas:
         int[] col0 = new int[3];
@@ -143,7 +150,9 @@ class BingoTest {
             System.out.println("");
         }
         assertThat(carton [1][0] ==-1).isFalse();
+
         assertThat(carton [1][0] == 0).isTrue();
+
     }
 
     @Test
@@ -161,7 +170,7 @@ class BingoTest {
         int[] col8 = new int[3];
 
         int[][] carton = {col0, col1, col2, col3, col4, col5, col6, col7, col8};
-
+        // posicion aleatoria sera 4
         int posicionAleatoria= 4;
 
         // Do (hacer)
@@ -179,14 +188,14 @@ class BingoTest {
         }
 
         assertThat(posicionAleatoria).isBetween(0,8);
-
+        //Verifica que el numero aleatoria este entre 0 y 8
     }
 
     @Test
     void buscarValorRepetido(){
 
         //When (Cuando)
-        // Genero los array
+        // Genero  elarray
 
         int[] carton = {5, 7, 12, 8, 27, 15, 37, 17, 11};
 
@@ -195,7 +204,10 @@ class BingoTest {
         //Then  (Entonces)
 
         assertThat(Bingo.buscarValorRepetido(carton,12)).isTrue();
+        //Verifica que tiene el elemento
+
         assertThat(Bingo.buscarValorRepetido(carton, 4)).isFalse();
+        //Verifica que no tiene el elemento
     }
 
     @Test
@@ -224,9 +236,47 @@ class BingoTest {
         assertThat(acierto).isEqualTo(27);
         assertThat(acierto).isNotEqualTo(2);
     }
+
+    @Test
+    void insertarAlFinal(){
+
+        // When (Cuando)
+        int[] carton = {1, 2, 3};
+
+        // Elemento a insertar
+        int elemento = 4;
+
+        // Do (Hacer)
+        int[] nuevoCarton = Bingo.insertarAlFinal(carton, elemento);
+
+
+        //Then (entonces):
+
+        for (int i = 0; i < carton.length; i++) {
+            assertThat(nuevoCarton[i]).isEqualTo(carton[i]);
+        }
+        // Verifica que el nuevo array contenga todos los elementos del array original
+
+        assertThat(nuevoCarton.length).isEqualTo(carton.length + 1);
+        // Verifica que el nuevo array tenga un tamanio mayor que el array original
+    }
+
     @Test
     void ordenar() {
 
+        //When (Cuando)
+        // Genero  elarray
+
+        int[] carton = {5, 7, 12, 8, 27, 15, 37, 17, 11};
+
+
+        // Do (hacer)
+        //Then  (Entonces)
+
+        Bingo.ordenar(carton);
+
+        assertThat(carton).containsExactly(5, 7, 8, 11, 12, 15, 17, 27, 37);
+        //Verifica que esta ordenado
     }
 }
 
