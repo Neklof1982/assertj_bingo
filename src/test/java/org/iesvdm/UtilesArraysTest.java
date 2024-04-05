@@ -296,12 +296,17 @@ public class UtilesArraysTest {
     void partirPor(){
 
         //When (Cuando)
-
+        int[] array = {1, 7, 57, 12, 29, 27, 12, 2};
 
         // Do (Hacer)
+        int[] arrayNuevo = new int[array.length];
+        arrayNuevo = UtilesArrays.partirPor(array, 2, 5);
 
 
         //Then (Entonces)
+
+        assertThat(arrayNuevo).containsExactly(57, 12, 29);
+        //verifica que se produce el corte en las posiciones indicadas de inicio y fin
 
     }
 
@@ -309,12 +314,18 @@ public class UtilesArraysTest {
     void sonIguales(){
 
         //When (Cuando)
-
+        int[] array = {1, 7, 57, 12};
 
         // Do (Hacer)
+        int[] arrayNuevo = {1, 7, 57, 12, 29, 27, 12, 2};
+
+        boolean resultado = UtilesArrays.sonIguales(array,arrayNuevo);
 
 
         //Then (Entonces)
+
+        assertThat(resultado).isFalse();
+        //Verifica que ambos no son iguales
 
     }
 
@@ -322,12 +333,18 @@ public class UtilesArraysTest {
     void elementosIguales(){
 
         //When (Cuando)
-
+        int[] array = {1, 7, 57, 12};
 
         // Do (Hacer)
+        int[] arrayNuevo = {1, 7, 57, 12, 29, 27, 12, 2};
+
+        boolean resultado = UtilesArrays.elementosIguales(array,arrayNuevo, 0);
 
 
         //Then (Entonces)
+
+        assertThat(resultado).isTrue();
+        // Verifica que ambos tienen en la posicion 0 el mismo elemento
 
     }
 
@@ -336,12 +353,18 @@ public class UtilesArraysTest {
 
         //When (Cuando)
 
+        int [] array = {1, 2, 3, 4};
+        int [] nuevoArray ={5, 6, 7, 8};
 
         // Do (Hacer)
+
+        int [] arrayNuevo = UtilesArrays.concatenarArrays(array,nuevoArray);
 
 
         //Then (Entonces)
 
+        assertThat(arrayNuevo).containsExactly(1, 2, 3, 4, 5, 6, 7, 8);
+        //Verifica que se han concatenado ambos arrays
     }
 
 }
