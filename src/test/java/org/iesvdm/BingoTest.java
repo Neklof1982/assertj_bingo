@@ -201,8 +201,29 @@ class BingoTest {
     @Test
     void pintarCarton () {
 
-    }
+        //When (Cuando)
+        // Genero los arrays columnas:
+        int[] col0 = new int[3];
+        int[] col1 = new int[3];
+        int[] col2 = new int[3];
+        int[] col3 = new int[3];
+        int[] col4 = new int[3];
+        int[] col5 = new int[3];
+        int[] col6 = new int[3];
+        int[] col7 = new int[3];
+        int[] col8 = new int[3];
 
+        int[][] carton = {col0, col1, col2, col3, col4, col5, col6, col7, col8};
+        int[] arrayBolas = {-1,0};
+        // Do (hacer)
+        Bingo.ponerBlancos(carton);
+        int acierto = Bingo.pintarCarton(carton, arrayBolas);
+
+        //Then  (Entonces)
+
+        assertThat(acierto).isEqualTo(27);
+        assertThat(acierto).isNotEqualTo(2);
+    }
     @Test
     void ordenar() {
 
