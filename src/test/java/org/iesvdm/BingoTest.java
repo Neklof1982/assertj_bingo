@@ -52,7 +52,7 @@ class BingoTest {
         Bingo.rellenarNumerosCarton(carton);
 
         //Then  (Entonces)
-        int contador = 0;
+
 
         for (int j = 0; j < carton[0].length; j++) {
             for( int i=0; i < carton.length; i++) {
@@ -177,8 +177,10 @@ class BingoTest {
             }
             System.out.println("");
         }
-        assertThat(carton [1][0] ==-1).isFalse();
-        assertThat(carton [1][0] == 0).isTrue();
+
+
+        assertThat(posicionAleatoria).isBetween(0,8);
+
     }
 
     @Test
