@@ -170,14 +170,13 @@ class BingoTest {
 
         //Then  (Entonces)
         int contador = 0;
-
+        boolean resultado = false;
         for (int j = 0; j < carton[0].length; j++) {
             for( int i=0; i < carton.length; i++) {
                 System.out.print((carton[i][j] == 0 ? " 0" : carton[i][j])+ " ");
             }
             System.out.println("");
         }
-
 
         assertThat(posicionAleatoria).isBetween(0,8);
 
@@ -186,6 +185,17 @@ class BingoTest {
     @Test
     void buscarValorRepetido(){
 
+        //When (Cuando)
+        // Genero los array
+
+        int[] carton = {5, 7, 12, 8, 27, 15, 37, 17, 11};
+
+
+        // Do (hacer)
+        //Then  (Entonces)
+
+        assertThat(Bingo.buscarValorRepetido(carton,12)).isTrue();
+        assertThat(Bingo.buscarValorRepetido(carton, 4)).isFalse();
     }
 
     @Test
