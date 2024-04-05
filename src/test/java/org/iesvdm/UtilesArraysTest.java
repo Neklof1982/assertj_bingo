@@ -256,7 +256,7 @@ public class UtilesArraysTest {
         //Then (Entonces)
 
         assertThat(arrayNuevo).containsExactly(4, 3, 2, 1);
-        //verifica que no estan en mismo orden
+        //verifica que no estan en orden invertido
 
     }
 
@@ -264,12 +264,15 @@ public class UtilesArraysTest {
     void imprimir(){
 
         //When (Cuando)
-        Customize Toolbar...
+        int[] array = {1, 2, 3, 4};
 
         // Do (Hacer)
-
+        UtilesArrays.imprimir(array);
 
         //Then (Entonces)
+
+        assertThat(array).containsExactly(1, 2 ,3 ,4);
+        //verifica que se imprime igual
 
     }
 
@@ -277,12 +280,15 @@ public class UtilesArraysTest {
     void  buscar(){
 
         //When (Cuando)
-
+        int[] array = {1, 2, 3, 4};
 
         // Do (Hacer)
-
+        UtilesArrays.buscar(array,4);
 
         //Then (Entonces)
+
+        assertThat(array[3]).isEqualTo(4);
+        //verifica que sel elemento 4 esta en la posicion 3
 
     }
 
