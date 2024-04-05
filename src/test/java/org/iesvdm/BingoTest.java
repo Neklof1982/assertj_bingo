@@ -1,6 +1,6 @@
 package org.iesvdm;
 
-import org.junit.jupiter.api.Nested;
+
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-@Nested
+
 class BingoTest {
 
     @Test
